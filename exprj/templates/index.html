@@ -3,43 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <title>home</title>
 </head>
 <body>
-    <h1>Django 사용자 입력받기</h1>
-    <h2>HTML Form 이용하기</h2>
-    <hr>
-    <table class="talbe-contents">
-        <tr>
-            <th>학번</th>
-            <th>이름</th>
-            <th>전공</th>
-        </tr>
-        {% for post in posts %}
-            <tr>
-                <td>{{post.studentID}}</td>
-                <td>{{post.name}}</td>
-                <td>{{post.major}}</td>
-            </tr>
+    <h1>장고 프로젝트 테스트</h1>
+    <h3>학생 정보 리스트</h3>
+    <ul>
+        {% for student in students %}
+        <li>{{ student.name }} - {{ student.major }}</li>
         {% endfor %}
-    </table>
-    <hr>
-    <form method="POST">
-      {% csrf_token %}
-      <div>
-        <label for="studentID">학번</label>
-        <input type="text" name="studentID" id="studentID">
-      </div>
-      <div>
-        <label for="name">이름</label>
-        <input type="text" name="name" id="name">
-      </div>
-      <div>
-        <label for="major">전공</label>
-        <input type="text" name="major" id="major">
-      </div>
-      <br>
-      <input type="submit" value="제출">
-    </form>
-  </body>
+    </ul>
+    <a href="{% url 'create_student' %}">create Student</a>
+    <a href="{% url 'input_read' %}">read Student</a>
+    <a href="{% url 'input_update' %}">update Student</a>
+    <a href="{% url 'input_delete' %}">delete Student</a>
+</body>
 </html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update</title>
+</head>
+<body>
+    <h1>학생 정보 수정</h1>
+    <form method="GET" action="{% url 'update_student' %}">
+        {% csrf_token %}
+        <label for="stdNum">학생번호(학번):</label>
+        <input type="text" id="stdNum" name="stdNum" required><br>
+        <button type="submit">제출</button>
+    </form>
+</body>
+</html>

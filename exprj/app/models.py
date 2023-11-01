@@ -8,11 +8,7 @@
 
 from django.db import models
 
-class StdForm(models.Model):
-    studentID = models.AutoField(primary_key=True)
+class Student(models.Model):
+    stdNum = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30)
     major = models.CharField(max_length=100)
-
-    class Meta:
-        managed = False
-        db_table = 'stdform'

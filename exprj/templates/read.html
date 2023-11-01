@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>read</title>
+</head>
+<body>
+    <h1>학생 정보 찾기</h1>
+    <p>학생번호: {{ student.stdNum }}</p>
+    <p>이름: {{ student.name }}</p>
+    <p>전공: {{ student.major }}</p>
+    <a href="{% url 'home' %}">Home</a>
+</body>
+</html>
